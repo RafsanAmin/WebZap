@@ -32,7 +32,9 @@ body {
 .cont {
   @apply w-full sm:w-10/12 mx-auto;
 }
-
+.glow {
+  @apply drop-shadow-[0_0px_50px_rgba(255,255,255,1)];
+}
 .slide-up {
   animation: ease-in-out infinite slide 10s;
 }
