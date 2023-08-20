@@ -7,6 +7,7 @@ import { JetBrains_Mono } from 'next/font/google';
 import Link from 'next/link';
 import { CgMenuRight, CgClose } from 'react-icons/cg';
 import { useState } from 'react';
+import Head from 'next/head';
 
 const lexend = Lexend_Deca({ subsets: ['latin'], display: 'swap' });
 const jetb = JetBrains_Mono({
@@ -14,11 +15,6 @@ const jetb = JetBrains_Mono({
   weight: '600',
   style: 'normal',
 });
-
-export const metadata: Metadata = {
-  title: 'Mr, Syntax Experts',
-  description: 'A team that has never give up.',
-};
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <li
@@ -34,6 +30,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const [nav, setNav] = useState(false);
   return (
     <html lang="en">
+      <Head>
+        <title>Mr. Syntax Experts</title>
+      </Head>
       <body style={lexend.style} className={lexend.className}>
         <nav className={'flex flex-1 p-5 sm:p-5 justify-between cont relative'}>
           <main className={'flex gap-3'}>
