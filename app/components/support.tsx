@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 const Support = () => {
   return (
@@ -21,13 +22,15 @@ const Support = () => {
               Premium Plans on demand.
             </p>
             <div className="h-[100%]">
-              <button
-                className={
-                  'min-w-[250px] my-auto text-slate-300 glow inline-block border border-slate-400 py-2 px-10 rounded-full text-lg hover:bg-[#ffffff11] hover:px-12 transition-all duration-150'
-                }
-              >
-                Deploy App Now
-              </button>
+              <Link href="/register">
+                <button
+                  className={
+                    'min-w-[250px] my-auto text-slate-300 glow inline-block border border-slate-400 py-2 px-10 rounded-full text-lg hover:bg-[#ffffff11] hover:px-12 transition-all duration-150'
+                  }
+                >
+                  Deploy App Now
+                </button>
+              </Link>
             </div>
             <main className={'flex gap-3'}>
               <img src="/logo.svg" alt="logo" className="w-[40px] sm:w-[60px]" />

@@ -6,9 +6,9 @@ import { Lexend_Deca } from 'next/font/google';
 import { JetBrains_Mono } from 'next/font/google';
 import Link from 'next/link';
 import { CgMenuRight, CgClose } from 'react-icons/cg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
-
+import AOS from 'aos';
 const lexend = Lexend_Deca({ subsets: ['latin'], display: 'swap' });
 const jetb = JetBrains_Mono({
   subsets: ['latin'],
@@ -29,6 +29,9 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [nav, setNav] = useState(false);
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <html lang="en">
       <Head>
@@ -38,9 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav className={'flex flex-1  justify-between cont '}>
           <main className={'flex gap-3'}>
             <img src="/logo.svg" alt="logo" className="w-[40px] sm:w-[60px]" />
-            <span className={'text-lg sm:text-xl my-auto text-[#ffffffa1]'} style={jetb.style}>
-              WebZap
-            </span>
+            <span className={'text-lg sm:text-xl my-auto text-[#ffffffa1]'}>WebZap</span>
           </main>
           <div className={'my-auto'}>
             <button
@@ -61,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <NavLink href="/#about">About</NavLink>
               <NavLink href="/#price">Pricings</NavLink>
               <NavLink href="/#support">Support</NavLink>
-              <NavLink href="/">Login</NavLink>
+              <NavLink href="/login">Login</NavLink>
             </ul>
           </div>
         </nav>

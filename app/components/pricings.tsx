@@ -1,4 +1,5 @@
 import React from 'react';
+import { AOSComp } from './AOS';
 
 type prop = {
   title: React.ReactNode;
@@ -73,23 +74,25 @@ const arr = [
 ];
 
 const Pricing = ({ title, money, features, color }: prop) => (
-  <div className="border border-slate-400 p-5 rounded-lg text-lg bg-[#ffffff1e]  transition-all duration-150  gap-8">
-    <h2 className={`text-${color}-300 font-bold text-2xl`}>{title}</h2>
-    <p className="text-slate-200 text-3xl sm:text-5xl py-6 text-left">{money}</p>
-    <ul className="flex flex-col gap-3 text-slate-400 justify-center ">
-      {features.map((arr, index) => (
-        <>
-          {' '}
-          <li key={index}>{arr}</li>
-          <div
-            className={
-              index + 1 != features.length ? 'border border-transparent  border-b-slate-500' : ''
-            }
-          />
-        </>
-      ))}
-    </ul>
-  </div>
+  <AOSComp classNameCont="flex-1" anim={'zoom-in'} delay={150}>
+    <div className="flex-1 h-full hover:scale-105 border border-slate-400 p-5 rounded-lg text-lg bg-[#ffffff1e]  transition-all duration-150  gap-8">
+      <h2 className={`text-${color}-300 font-bold text-2xl`}>{title}</h2>
+      <p className="text-slate-200 text-3xl sm:text-5xl py-6 text-left">{money}</p>
+      <ul className="flex flex-col gap-3 text-slate-400 justify-center ">
+        {features.map((arr, index) => (
+          <>
+            {' '}
+            <li key={index}>{arr}</li>
+            <div
+              className={
+                index + 1 != features.length ? 'border border-transparent  border-b-slate-500' : ''
+              }
+            />
+          </>
+        ))}
+      </ul>
+    </div>
+  </AOSComp>
 );
 const Cont = () => {
   return (
