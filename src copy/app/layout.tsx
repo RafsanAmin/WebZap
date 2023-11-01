@@ -32,14 +32,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <Head>
-        <title>WebZap</title>
+        <title>Mr. Syntax Experts</title>
       </Head>
       <body style={lexend.style} className={lexend.className}>
-        <nav className={'flex flex-1  justify-between cont '}>
+        <nav className={'flex flex-1 p-5 sm:p-5 justify-between cont '}>
           <main className={'flex gap-3'}>
             <img src="/logo.svg" alt="logo" className="w-[40px] sm:w-[60px]" />
             <span className={'text-lg sm:text-xl my-auto text-[#ffffffa1]'} style={jetb.style}>
-              WebZap
+              Mr.Syntax_Experts
             </span>
           </main>
           <div className={'my-auto'}>
@@ -50,17 +50,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {nav ? <CgClose /> : <CgMenuRight />}
             </button>
             <ul
-              onClick={() => {
-                setNav(false);
-              }}
               className={`${
                 nav || 'hidden'
               } bg-[#00000042] z-[9]  backdrop-blur-2xl  lg:bg-transparent absolute lg:relative left-0 top-0 h-[100vh] lg:h-auto pt-[70px] lg:top-0 gap-5 p-5 lg:p-0 lg:gap-0 w-[100vw] lg:w-auto flex flex-col lg:flex-row text-base items-center lg:flex`}
             >
               <NavLink href="/">Home</NavLink>
-              <NavLink href="/#about">About</NavLink>
-              <NavLink href="/#price">Pricings</NavLink>
-              <NavLink href="/#support">Support</NavLink>
+              <NavLink href="/about/">About</NavLink>
+              <NavLink href="/">Competetions</NavLink>
+              <NavLink href="/">Notice</NavLink>
               <NavLink href="/">Login</NavLink>
             </ul>
           </div>

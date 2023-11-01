@@ -20,9 +20,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-html {
-  scroll-behavior: smooth;
-}
+
 body {
   background: url('/bg.png');
   background-repeat: no-repeat;
@@ -30,20 +28,15 @@ body {
   background-attachment: fixed;
   background-position: left top;
 }
-p {
-  @apply text-slate-400 glow text-justify;
-}
+
 .cont {
-  @apply w-full sm:w-10/12 mx-auto p-5 sm:p-5 max-w-[1250px];
+  @apply w-full sm:w-10/12 mx-auto;
 }
 .glow {
   @apply drop-shadow-[0_0px_50px_rgba(255,255,255,1)];
 }
 .slide-up {
   animation: ease-in-out infinite slide 10s;
-}
-img {
-  object-fit: cover;
 }
 @keyframes slide {
   0% {
@@ -74,7 +67,4 @@ img {
     translate: 0 0%;
     width: 3.25em;
   }
-}
-b {
-  font-weight: 600;
 }
